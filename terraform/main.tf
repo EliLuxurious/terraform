@@ -33,7 +33,8 @@ data "aws_ami" "debian" {
 }
 
 resource "aws_security_group" "sg" {
-  name        = "comportamiento-sg"
+  # name        = "comportamiento-sg"  
+  name_prefix = "comportamiento-sg-"    
   description = "Permitir HTTP y SSH"
   vpc_id      = data.aws_vpc.default.id
 
